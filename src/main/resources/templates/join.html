@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>join page</title>
+</head>
+<body>
+<h1>join page</h1>
+
+<form action="/join" method="post">
+    <div>
+        아이디 <input type="text" id="username" name="username">
+    </div>
+    <div>
+        비번 <input type="text" id="password" name="password">
+    </div>
+    <div>
+        이름 <input type="text" id="name" name="name">
+    </div>
+    <div>
+        성별
+        <select name="genderNumber" id="genderNumber">
+            <option value="none" selected disabled hidden>선택하세요</option>
+            <option th:each="gender : ${genderMap}" th:value="${gender.key}">[[${gender.value}]]</option>
+        </select>
+    </div>
+    <div>
+        회사명 <input type="text" id="companyName" name="companyName">
+    </div>
+    <div>
+        업종
+        <select name="sectorCode" id="sectorCode">
+            <option value="none" selected disabled hidden>선택하세요</option>
+            <option th:each="sector : ${sectorList}" th:value="${sector.sectorCode}">[[${sector.sectorName}]]</option>
+        </select>
+    </div>
+    <div>
+        지역
+        <select name="regionCode" id="regionCode">
+            <option value="none" selected disabled hidden>선택하세요</option>
+            <option th:each="region : ${regionList}" th:value="${region.regionCode}">[[${region.regionName}]]</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form>
+
+</body>
+</html>

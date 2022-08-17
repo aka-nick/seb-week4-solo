@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org22222">
+<head>
+    <meta charset="UTF-8">
+    <title>member list page</title>
+    <style>
+        table td {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>member list page</h1>
+<table>
+    <thead>
+        <th>#</th>
+        <th>id</th>
+        <th>이름</th>
+        <th>회사명</th>
+        <th>업종</th>
+        <th>지역</th>
+    </thead>
+    <tr>
+        <td colspan="100">
+            <form action="/members">
+                <div>
+                    업종
+                    <select name="sectorCode" id="sectorCode">
+                        <option value="none" selected disabled hidden>선택하세요</option>
+                        <option th:each="sector : ${sectorList}" th:value="${sector.sectorCode}">[[${sector.sectorName}]]</option>
+                    </select>
+                    &nbsp;///&nbsp;
+                    지역
+                    <select name="regionCode" id="regionCode">
+                        <option value="none" selected disabled hidden>선택하세요</option>
+                        <option th:each="region : ${regionList}" th:value="${region.regionCode}">[[${region.regionName}]]</option>
+                    </select>
+                </div>
+                <div>
+                    <a th:href="@{/members(page=${page}-1, sectorCode=${findSectorCode}, regionCode=${findRegionCode})}">이전</a>
+                    <a th:href="@{/members(page=${page}+1, sectorCode=${findSectorCode}, regionCode=${findRegionCode})}">다음</a>
+                </div>
+                <input type="submit" value="submit">
+            </form>
+            
+        </td>
+    </tr>
+    <tr th:each="member : ${members}">
+        <td>[[${member.id}]]</td>
+        <td>[[${member.username}]]</td>
+        <td>[[${member.name}]]</td>
+        <td>[[${member.companyName}]]</td>
+        <td>[[${member.sector.sectorName}]]</td>
+        <td>[[${member.region.regionName}]]</td>
+    </tr>
+</table>
+
+</body>
+</html>
