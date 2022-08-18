@@ -1,0 +1,66 @@
+= 사장님 커뮤니티 애플리케이션
+:sectnums:
+:toc: left
+:toclevels: 4
+:toc-title: Table of Contents
+:source-highlighter: prettify
+
+Nick <https://github.com/aka-nick>
+
+v1.0.0, 2022.08.17
+
+***
+== MemberApiController
+=== 회원 가입
+.curl-request
+include::{snippets}/join-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/join-member/http-request.adoc[]
+
+.request-fields
+include::{snippets}/join-member/request-fields.adoc[]
+
+.http-response
+include::{snippets}/join-member/http-response.adoc[]
+
+.response-fields
+include::{snippets}/join-member/response-fields.adoc[]
+
+
+=== 회원 로그인
+.curl-request
+include::{snippets}/login-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/login-member/http-request.adoc[]
+
+.request-fields
+include::{snippets}/login-member/request-fields.adoc[]
+
+.http-response
+include::{snippets}/login-member/http-response.adoc[]
+
+.response-fields
+include::{snippets}/login-member/response-fields.adoc[]
+
+
+=== 회원 조회
+.curl-request
+include::{snippets}/retrieve-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/retrieve-member/http-request.adoc[]
+
+//.request-fields
+//include::{snippets}/retrieve-member/request-fields.adoc[]
+
+.path-parameter
+include::{snippets}/retrieve-member/path-parameters.adoc[]
+
+.http-response
+include::{snippets}/retrieve-member/http-response.adoc[]
+
+.response-fields
+include::{snippets}/retrieve-member/response-fields.adoc[]
+
